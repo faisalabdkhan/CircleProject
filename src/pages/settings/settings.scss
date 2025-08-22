@@ -1,0 +1,56 @@
+.settings-page {
+  display: flex;
+  height: 100vh;
+  background-color: #fff;
+}
+
+.settings-container {
+  display: flex;
+  flex-grow: 1;
+  padding: 30px;
+  gap: 40px;
+}
+
+.settings-sidebar {
+  width: 250px;
+  height: fit-content;
+
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      padding: 12px 16px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      font-weight: 500;
+      margin-bottom: 10px;
+
+      &.active {
+        background: #ffe5e5;
+        color: #d70000;
+      }
+
+      &.signout {
+        color: #d70000;
+      }
+
+      .icon {
+        font-size: 20px;
+      }
+
+      &:hover {
+        background-color: #f5f5f5;
+      }
+    }
+  }
+}
+
+.settings-content {
+  flex: 1;
+  width: auto;
+  height: fit-content;
+}

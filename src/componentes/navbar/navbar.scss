@@ -1,0 +1,11 @@
+.navbar {
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  justify-content: left;
+  border-bottom: 1px solid #eee;
+
+  .navbar-logo {
+    margin-left: 350px;
+  }
+}

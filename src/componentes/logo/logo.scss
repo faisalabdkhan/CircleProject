@@ -1,0 +1,47 @@
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  &.small {
+    .circle {
+      width: 25px;
+      height: 25px;
+    }
+    span {
+      font-size: 1.25rem;
+    }
+  }
+
+  &.medium {
+    .circle {
+      width: 30px;
+      height: 30px;
+    }
+    span {
+      font-size: 1.50rem;
+    }
+  }
+
+  &.large {
+    .circle {
+      width: 35px;
+      height: 35px;
+    }
+    span {
+      font-size: 1.75rem;
+    }
+  }
+
+  .circle {
+    background-color: #e84141;
+    border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: 0 0 0 6px #e84141;
+  }
+
+  span {
+    font-weight: bold;
+    color: #000;
+  }
+}

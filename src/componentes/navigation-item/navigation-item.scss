@@ -1,0 +1,56 @@
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 1rem;
+  border-radius: 12px;
+  text-decoration: none;
+  color: #111827;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: #f3f4f6;
+  }
+
+  &.active {
+    background-color: #fee2e2;
+    color: #b91c1c;
+
+    svg {
+      stroke: #b91c1c;
+    }
+  }
+
+  svg {
+    stroke-width: 2px;
+  }
+
+  // Bottom bar specific styles
+  &.bottom-nav {
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 13px;
+    color: #475569;
+    padding: 0;
+
+    svg {
+      font-size: 24px;
+    }
+
+    span {
+      margin-top: 4px;
+    }
+
+    &.active {
+      color: #ef4444;
+      background-color: transparent;
+    }
+
+    &.create {
+      color: #ef4444;
+    }
+  }
+}

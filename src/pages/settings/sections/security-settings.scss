@@ -1,0 +1,63 @@
+.security-settings {
+  background: #fff;
+  padding: 30px;
+
+  h5 {
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .subtext {
+    margin-top: 4px;
+    color: #6b7280;
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+
+  .label {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+
+  .password-section {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 40px;
+  }
+
+  .divider {
+    margin: 30px 0 24px;
+  }
+
+  .session-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f3f4f6;
+    padding: 14px 20px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+
+    p {
+      margin: 2px 0 0;
+      font-size: 13px;
+      color: #6b7280;
+    }
+
+    .signout-text {
+      color: #ef4444;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+    }
+  }
+
+  .note {
+    font-size: 13px;
+    color: #6b7280;
+    margin-bottom: 12px;
+  }
+}
