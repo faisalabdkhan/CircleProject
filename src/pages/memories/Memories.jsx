@@ -1,7 +1,6 @@
 "use client"
 
 import { useState } from "react"
-import LeftBar from "../../componentes/leftBar/LeftBar"
 import Avatar from "../../componentes/avatar/Avatar"
 import Card from "../../componentes/card/Card"
 import Input from "../../componentes/input/Input"
@@ -79,97 +78,90 @@ const Memories = () => {
 
   return (
     <div className="memories-page">
-      <div className="layout">
-        <div className="left-bar">
-          <LeftBar />
-        </div>
-        <div className="right-content">
-          <div className="memories-container">
-            <div className="memories-top">
-              <h2>Memories</h2>
+      <div className="memories-container">
+        <div className="memories-top">
+          <h2>Memories</h2>
 
-              <div className="search-filter">
-                <Input variant="search" icon={SearchIcon} placeholder="Search memories..." />
-                <div className="filter-dropdown">
-                  <Button variant="outline" onClick={() => setFilterOpen(!filterOpen)} className="filter-button">
-                    <FilterListIcon />
-                    <span>Filter</span>
-                    <ExpandMoreIcon fontSize="small" />
-                  </Button>
+          <div className="search-filter">
+            <Input variant="search" icon={SearchIcon} placeholder="Search memories..." />
+            <div className="filter-dropdown">
+              <Button variant="outline" onClick={() => setFilterOpen(!filterOpen)} className="filter-button">
+                <FilterListIcon />
+                <span>Filter</span>
+                <ExpandMoreIcon fontSize="small" />
+              </Button>
 
-                  {filterOpen && (
-                    <div className="filter-menu">
-                      <div className="filter-group">
-                        <p>Filter by Circle</p>
-                        <ul>
-                          <li>All Circles</li>
-                          <li>Family Time</li>
-                          <li>Close Friends</li>
-                          <li>College Buddies</li>
-                          <li>Book Club</li>
-                        </ul>
-                      </div>
-                      <div className="filter-group">
-                        <p>Sort by Date</p>
-                        <ul>
-                          <li>Newest first</li>
-                          <li>Oldest first</li>
-                        </ul>
-                      </div>
-                    </div>
-                  )}
+              {filterOpen && (
+                <div className="filter-menu">
+                  <div className="filter-group">
+                    <p>Filter by Circle</p>
+                    <ul>
+                      <li>All Circles</li>
+                      <li>Family Time</li>
+                      <li>Close Friends</li>
+                      <li>College Buddies</li>
+                      <li>Book Club</li>
+                    </ul>
+                  </div>
+                  <div className="filter-group">
+                    <p>Sort by Date</p>
+                    <ul>
+                      <li>Newest first</li>
+                      <li>Oldest first</li>
+                    </ul>
+                  </div>
                 </div>
-              </div>
-
-              <div className="memories-tabs">
-                <button
-                  className={`tab ${activeTab === "memories" ? "active" : ""}`}
-                  onClick={() => setActiveTab("memories")}
-                >
-                  Memories
-                </button>
-                <button
-                  className={`tab ${activeTab === "allPosts" ? "active" : ""}`}
-                  onClick={() => setActiveTab("allPosts")}
-                >
-                  All Posts
-                </button>
-              </div>
+              )}
             </div>
+          </div>
 
-            {dataToRender.map((item) => (
-              <Card key={item.id} variant="memory" className="memory-card">
-                <div className="memory-header">
-                  <div className="memory-date">📅 {item.timeAgo}</div>
-                </div>
-                <div className="memory-content">
-                  <div className="memory-user-info">
-                    <Avatar />
-                    <div className="user-details">
-                      <span className="user-name">{item.user}</span>
-                      <span className="user-meta">
-                        {item.posted} · <LockIcon fontSize="inherit" className="lock-icon" /> {item.audience}
-                      </span>
-                    </div>
-                    <MoreHorizIcon className="more-icon" />
-                  </div>
-                  <p className="memory-text">{item.text}</p>
-                  {item.images > 0 && (
-                    <div className={`memory-images images-${item.images}`}>
-                      {[...Array(item.images)].map((_, idx) => (
-                        <div className="image-placeholder" key={idx}></div>
-                      ))}
-                    </div>
-                  )}
-                  <div className="memory-footer">
-                    <ChatBubbleOutlineIcon fontSize="small" />
-                    <span>{item.comments}</span>
-                  </div>
-                </div>
-              </Card>
-            ))}
+          <div className="memories-tabs">
+            <button
+              className={`tab ${activeTab === "memories" ? "active" : ""}`}
+              onClick={() => setActiveTab("memories")}
+            >
+              Memories
+            </button>
+            <button
+              className={`tab ${activeTab === "allPosts" ? "active" : ""}`}
+              onClick={() => setActiveTab("allPosts")}
+            >
+              All Posts
+            </button>
           </div>
         </div>
+
+        {dataToRender.map((item) => (
+          <Card key={item.id} variant="memory" className="memory-card">
+            <div className="memory-header">
+              <div className="memory-date">📅 {item.timeAgo}</div>
+            </div>
+            <div className="memory-content">
+              <div className="memory-user-info">
+                <Avatar />
+                <div className="user-details">
+                  <span className="user-name">{item.user}</span>
+                  <span className="user-meta">
+                    {item.posted} · <LockIcon fontSize="inherit" className="lock-icon" /> {item.audience}
+                  </span>
+                </div>
+                <MoreHorizIcon className="more-icon" />
+              </div>
+              <p className="memory-text">{item.text}</p>
+              {item.images > 0 && (
+                <div className={`memory-images images-${item.images}`}>
+                  {[...Array(item.images)].map((_, idx) => (
+                    <div className="image-placeholder" key={idx}></div>
+                  ))}
+                </div>
+              )}
+              <div className="memory-footer">
+                <ChatBubbleOutlineIcon fontSize="small" />
+                <span>{item.comments}</span>
+              </div>
+            </div>
+          </Card>
+        ))}
       </div>
     </div>
   )

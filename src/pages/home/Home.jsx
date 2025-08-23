@@ -3,8 +3,7 @@ import Posts from "../../componentes/posts/Posts"
 
 function Home() {
   return (
-    <div className="home" style={{ height: '1000px', width: '100%', overflowY: 'scroll' }}>
-
+    <div className="home">
       {/* <Stories/> */}
       <Posts/>
     </div>

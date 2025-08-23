@@ -93,7 +93,7 @@ const Notifications = () => {
   })
 
   return (
-    <div className="notifications" style={{ height: '1000px', width: '100%', overflowY: 'scroll' }}>
+    <div className="notifications">
       <div className="top">
         <h2>Notifications</h2>
         <Button variant="outline" size="small" onClick={markAllAsRead}>

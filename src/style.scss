@@ -1,3 +1,167 @@
+// Responsive Design Variables
+$breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+
+// Responsive Mixins
+@mixin respond-to($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (min-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @warn "Unknown breakpoint: #{$breakpoint}";
+  }
+}
+
+@mixin respond-below($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (max-width: map-get($breakpoints, $breakpoint) - 1px) {
+      @content;
+    }
+  } @else {
+    @warn "Unknown breakpoint: #{$breakpoint}";
+  }
+}
+
+// App Layout Styles
+.app-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.main-content {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  
+  @include respond-below(md) {
+    flex-direction: column;
+  }
+}
+
+.content-area {
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+  height: calc(100vh - 60px); // Subtract navbar height
+  
+  @include respond-below(md) {
+    padding: 0.5rem;
+    padding-bottom: 80px; // Space for bottom bar
+    height: calc(100vh - 60px - 70px); // Subtract navbar and bottom bar height
+  }
+}
+
+// Mobile-first responsive utilities
+.hide-mobile {
+  @include respond-below(md) {
+    display: none !important;
+  }
+}
+
+.show-mobile {
+  @include respond-to(md) {
+    display: none !important;
+  }
+}
+
+.hide-tablet {
+  @include respond-below(lg) {
+    display: none !important;
+  }
+}
+
+.show-tablet {
+  @include respond-to(lg) {
+    display: none !important;
+  }
+}
+
+// Global responsive container
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+  
+  @include respond-to(sm) {
+    max-width: 540px;
+  }
+  
+  @include respond-to(md) {
+    max-width: 720px;
+  }
+  
+  @include respond-to(lg) {
+    max-width: 960px;
+  }
+  
+  @include respond-to(xl) {
+    max-width: 1140px;
+  }
+  
+  @include respond-to(xxl) {
+    max-width: 1320px;
+  }
+}
+
+// Responsive grid system
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -0.5rem;
+}
+
+.col {
+  flex: 1;
+  padding: 0 0.5rem;
+  
+  @include respond-below(sm) {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+// Mobile-specific improvements
+@media (max-width: 480px) {
+  // Improve touch targets
+  button, a, [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  // Better text readability
+  body {
+    font-size: 16px; // Prevents zoom on iOS
+  }
+  
+  // Improve scrolling
+  * {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+// Tablet-specific improvements
+@media (min-width: 481px) and (max-width: 768px) {
+  .content-area {
+    padding: 0.75rem;
+  }
+}
+
+// Desktop-specific improvements
+@media (min-width: 769px) {
+  .content-area {
+    padding: 1.5rem;
+  }
+}
+
 // $themes: (
 //   light: (
 //     textColor: #000,

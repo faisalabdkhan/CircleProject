@@ -1,54 +1,54 @@
 .myCircles-page {
-  display: flex;
   width: 100%;
-  height: 100vh;
-  flex-direction: column;
+  min-height: 100vh;
+  padding: 30px;
+  
+  @media (max-width: 768px) {
+    padding: 15px;
+  }
+  
+  @media (max-width: 480px) {
+    padding: 10px;
+  }
+}
 
-  .layout {
-    flex: 1;
+.myCircles {
+  width: 100%;
+
+  .header {
     display: flex;
-    height: auto;
-    min-height: 100vh;
-    overflow: hidden;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 15px;
+      align-items: stretch;
+    }
 
-    .right-content {
-      flex: 1;
-      height: 100%;
-      overflow-y: auto;
-      padding-bottom: 60px;
+    h2 {
+      font-size: 24px;
+      font-weight: 700;
+      color: #0d0d0d;
+      margin: 0;
+      
+      @media (max-width: 480px) {
+        font-size: 20px;
+      }
     }
   }
 
-  .myCircles {
-    padding: 30px;
-    padding-bottom: 80px;
-    width: 100%;
-
-    .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 20px;
-
-      h2 {
-        font-size: 24px;
-        font-weight: 700;
-        color: #0d0d0d;
-        margin: 0;
-      }
-    }
-
-    .circlesGrid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 24px;
-      width: 100%;
-    }
   .circlesGrid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 24px;
     width: 100%;
+    
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
   }
 
   .circleCard {
@@ -120,11 +120,15 @@
         color: #888;
       }
 
-      a {
+      .link-button {
+        background: none;
+        border: none;
         font-size: 13px;
         color: #e53935;
         text-decoration: none;
         font-weight: 500;
+        cursor: pointer;
+        padding: 0;
 
         &:hover {
           text-decoration: underline;
@@ -132,11 +136,4 @@
       }
     }
   }
-
-  @media (max-width: 768px) {
-    .circlesGrid {
-      grid-template-columns: 1fr;
-    }
-  }
-}
 }

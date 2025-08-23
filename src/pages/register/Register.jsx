@@ -2,6 +2,7 @@ import "./register.scss"
 import Logo from "../../componentes/logo/Logo"
 import Input, { InputGroup } from "../../componentes/input/Input"
 import Button from "../../componentes/button/Button"
+import { Link } from "react-router-dom"
 
 const Register = () => {
   return (
@@ -22,7 +23,7 @@ const Register = () => {
           <Input type="text" placeholder="Username" />
           <Input type="password" placeholder="Password" />
           <div className="terms">
-            By creating an account, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+            By creating an account, you agree to our <button type="button" className="link-button">Terms of Service</button> and <button type="button" className="link-button">Privacy Policy</button>
             .
           </div>
           <Button type="submit" size="large" fullWidth>
@@ -30,7 +31,7 @@ const Register = () => {
           </Button>
         </form>
         <div className="login-link">
-          Already have an account? <a href="#">Sign in</a>
+          Already have an account? <Link to="/login">Sign in</Link>
         </div>
       </main>
 

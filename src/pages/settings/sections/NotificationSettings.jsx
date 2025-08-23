@@ -1,6 +1,6 @@
 // sections/NotificationSettings.jsx
 import React, { useState } from "react";
-import { Box, Typography, FormControlLabel, Switch, Divider, Button } from "@mui/material";
+import { Box, Typography, Switch, Divider, Button } from "@mui/material";
 
 const NotificationSettings = () => {
   const [notifications, setNotifications] = useState({

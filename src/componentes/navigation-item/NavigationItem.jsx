@@ -14,9 +14,15 @@ const NavigationItem = ({
   const bottomNavClass = isBottomNav ? "bottom-nav" : ""
   const createClass = isCreate ? "create" : ""
 
+  const handleClick = (e) => {
+    if (onClick) {
+      onClick(e)
+    }
+  }
+
   if (onClick) {
     return (
-      <div className={`nav-item ${bottomNavClass} ${createClass} ${className}`} onClick={onClick}>
+      <div className={`nav-item ${bottomNavClass} ${createClass} ${className}`} onClick={handleClick}>
         {Icon && <Icon fontSize="small" />}
         <span>{children}</span>
       </div>

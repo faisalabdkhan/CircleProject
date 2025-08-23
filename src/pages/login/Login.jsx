@@ -2,6 +2,7 @@ import "./login.scss"
 import Logo from "../../componentes/logo/Logo"
 import Input from "../../componentes/input/Input"
 import Button from "../../componentes/button/Button"
+import { Link } from "react-router-dom"
 
 const Login = () => {
   return (
@@ -17,14 +18,14 @@ const Login = () => {
           <Input type="email" placeholder="Email" required />
           <Input type="password" placeholder="Password" required />
           <div className="forgot-password">
-            <a href="#">Forgot password?</a>
+            <button type="button" className="link-button">Forgot password?</button>
           </div>
           <Button type="submit" size="large" fullWidth>
             Sign in
           </Button>
         </form>
         <div className="signup-text">
-          Don't have an account? <a href="#">Sign up</a>
+          Don't have an account? <Link to="/register">Sign up</Link>
         </div>
       </main>
 

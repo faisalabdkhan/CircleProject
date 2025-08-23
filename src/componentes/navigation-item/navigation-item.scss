@@ -52,5 +52,24 @@
     &.create {
       color: #ef4444;
     }
+    
+    @media (max-width: 480px) {
+      font-size: 11px;
+      
+      svg {
+        font-size: 20px;
+      }
+      
+      span {
+        margin-top: 2px;
+      }
+    }
+  }
+  
+  @media (max-width: 480px) {
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 10px;
+    font-size: 0.9rem;
   }
 }

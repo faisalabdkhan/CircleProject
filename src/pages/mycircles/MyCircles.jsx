@@ -36,41 +36,37 @@ const MyCircles = () => {
 
   return (
     <div className="myCircles-page">
-      <div className="layout">
-        <div className="right-content">
-          <div className="myCircles">
-            <div className="header">
-              <h2>My Circles</h2>
-              <Button variant="primary" round>
-                <AddIcon fontSize="small" /> Create Circle
-              </Button>
-            </div>
+      <div className="myCircles">
+        <div className="header">
+          <h2>My Circles</h2>
+          <Button variant="primary" round>
+            <AddIcon fontSize="small" /> Create Circle
+          </Button>
+        </div>
 
-            <div className="circlesGrid">
-              {circles.map((circle, idx) => (
-                <Card key={idx} variant="circle" padding="none" className="circleCard">
-                  <div className="imgWrapper">
-                    <div className="imgPlaceholder" />
-                    {circle.isNew && <span className="newTag">New</span>}
-                  </div>
+        <div className="circlesGrid">
+          {circles.map((circle, idx) => (
+            <Card key={idx} variant="circle" padding="none" className="circleCard">
+              <div className="imgWrapper">
+                <div className="imgPlaceholder" />
+                {circle.isNew && <span className="newTag">New</span>}
+              </div>
 
-                  <div className="content">
-                    <h3>{circle.title}</h3>
-                    <p>{circle.desc}</p>
-                    <div className="info">
-                      <GroupIcon className="groupIcon" />
-                      <span>{circle.members} members</span>
-                    </div>
-                  </div>
+              <div className="content">
+                <h3>{circle.title}</h3>
+                <p>{circle.desc}</p>
+                <div className="info">
+                  <GroupIcon className="groupIcon" />
+                  <span>{circle.members} members</span>
+                </div>
+              </div>
 
-                  <div className="footer">
-                    <span className="activeText">Active {circle.active}</span>
-                    <a href="#">View Circle</a>
-                  </div>
-                </Card>
-              ))}
-            </div>
-          </div>
+              <div className="footer">
+                <span className="activeText">Active {circle.active}</span>
+                <button type="button" className="link-button">View Circle</button>
+              </div>
+            </Card>
+          ))}
         </div>
       </div>
     </div>

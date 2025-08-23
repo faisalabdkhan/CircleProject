@@ -10,7 +10,6 @@ import {
   MenuItem,
   Divider,
   Button,
-  TextField,
 } from "@mui/material";
 
 const PrivacySettings = () => {
